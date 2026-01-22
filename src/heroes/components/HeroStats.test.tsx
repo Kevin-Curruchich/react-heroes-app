@@ -105,12 +105,12 @@ const mockSummaryData: SummaryInformationResponse = {
 const renderHetoStats = (mockData?: Partial<SummaryInformationResponse>) => {
   if (mockData) {
     mockUseHeroSummary.mockReturnValue({
-      data: mockData as unknown as ReturnType<typeof useHeroSummary>,
-    });
+      data: mockData,
+    } as ReturnType<typeof useHeroSummary>);
   } else {
     mockUseHeroSummary.mockReturnValue({
-      data: undefined as unknown as ReturnType<typeof useHeroSummary>,
-    });
+      data: undefined,
+    } as ReturnType<typeof useHeroSummary>);
   }
 
   return render(

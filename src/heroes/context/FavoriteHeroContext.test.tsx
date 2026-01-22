@@ -10,8 +10,21 @@ import type { Hero } from "../types/hero.interface";
 const mockHero = {
   id: "hero-1",
   name: "Mock Hero",
-  power: "Mock Power",
-} as Hero;
+  slug: "mock-hero",
+  alias: "Mock Alias",
+  powers: ["Mock Power"],
+  description: "Mock Description",
+  strength: 10,
+  intelligence: 10,
+  speed: 10,
+  durability: 10,
+  team: "Mock Team",
+  image: "mock.jpg",
+  firstAppearance: "2023",
+  status: "Active",
+  category: "Hero",
+  universe: "Marvel",
+} as unknown as Hero;
 
 const TestComponent = () => {
   const { favoriteCount, favorites, toggleFavorite, isFavorite } =

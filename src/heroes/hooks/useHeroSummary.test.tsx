@@ -38,23 +38,49 @@ describe("useHeroSummary", () => {
   });
 
   test("Should return success state with data when API call success", async () => {
-    const mockSummaryData = {
+    const mockSummaryData: SummaryInformationResponse = {
       totalHeroes: 150,
-      strongesthero: {
+      strongestHero: {
         id: "hero_001",
         name: "MightyMax",
+        slug: "mighty-max",
+        alias: "MightyMax",
+        powers: ["Super Strength"],
+        description: "The strongest hero",
+        strength: 10,
+        intelligence: 5,
+        speed: 5,
+        durability: 10,
+        team: "Heroes United",
+        image: "mighty.jpg",
+        firstAppearance: "2020",
+        status: "Active",
+        category: "Hero",
+        universe: "Test Universe",
       },
-      smartesthero: {
+      smartestHero: {
         id: "hero_002",
         name: "BrainyBeth",
+        slug: "brainy-beth",
+        alias: "BrainyBeth",
+        powers: ["Genius Intellect"],
+        description: "The smartest hero",
+        strength: 3,
+        intelligence: 10,
+        speed: 5,
+        durability: 5,
+        team: "Heroes United",
+        image: "brainy.jpg",
+        firstAppearance: "2020",
+        status: "Active",
+        category: "Hero",
+        universe: "Test Universe",
       },
       heroCount: 18,
       villainCount: 7,
     };
 
-    mockGetSummaryAction.mockResolvedValue(
-      mockSummaryData as SummaryInformationResponse
-    );
+    mockGetSummaryAction.mockResolvedValue(mockSummaryData);
 
     const { result } = renderHook(() => useHeroSummary(), {
       wrapper: tanStackCustomProvider(),

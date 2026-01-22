@@ -44,7 +44,7 @@ describe("usePaginationHero", () => {
   test("Should return success state with data when Api call succeeds", async () => {
     const mockHeroData = {
       total: 20,
-      page: 4,
+      pages: 4,
       heroes: [],
     };
 

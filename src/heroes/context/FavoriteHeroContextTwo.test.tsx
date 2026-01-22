@@ -7,11 +7,24 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { use } from "react";
 import type { Hero } from "../types/hero.interface";
 
-const mockHero = {
+const mockHero: Hero = {
   id: "hero-1",
   name: "Mock Hero",
-  power: "Mock Power",
-} as Hero;
+  slug: "mock-hero",
+  alias: "Mock Alias",
+  powers: ["Mock Power"],
+  description: "Mock Description",
+  strength: 5,
+  intelligence: 5,
+  speed: 5,
+  durability: 5,
+  team: "Mock Team",
+  image: "mock.jpg",
+  firstAppearance: "2024",
+  status: "Active",
+  category: "Hero",
+  universe: "Mock Universe",
+};
 
 const localStorageMock = {
   getItem: vi.fn(),
